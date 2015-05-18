@@ -4,13 +4,21 @@
  * Injection du module Angular ui.bootstrap pour faire du bootstrap Angular
  */
 
-angular.module("carnetAdresses", ["ngRoute", "ui.bootstrap"]);
-/*
-.config(function($routeProvider) {
+angular.module("carnetAdresses", ["ngRoute", "ui.bootstrap"]).config(function($routeProvider) {
 	$routeProvider
 	.when("/", {
-		templateUrl:"",
-		controller:""
+		templateUrl:"app/views/home.html"
+	})
+	.when("/signin", {
+		templateUrl:"app/views/signin.html",
+		controller:"SignInController"
+	})
+	.when("/signup", {
+		templateUrl:"app/views/signup.html",
+		controller:"SignUpController"
+	})	
+	.otherwise({
+		redirectTo: "/"
 	})
 });
-*/
+
