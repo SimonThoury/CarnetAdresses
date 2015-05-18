@@ -1,5 +1,26 @@
 <div class="container">
+	<form name="signinForm" ng-submit="signIn()" novalidate>
+		<div class="input-group">
+			<span class="input-group-addon">Login</span> <input type="text"
+				class="form-control" placeholder="Enter votre login"
+				ng-model="profil.login" required>
+		</div>
+		<br />
+		<div class="input-group">
+			<span class="input-group-addon">Mot de passe</span> <input
+				type="password" class="form-control"
+				placeholder="Entrer votre mot de passe" ng-model="profil.password"
+				required>
+		</div>
+		<br />
+		<div class="input-group">
+			<button type="submit" class="btn btn-primary" disabled="disabled"
+				ng-disabled="signinForm.$invalid">Connexion</button>
+		</div>
+	</form>
+	<br />
 	<div>
-		<a ng-click="goToSignUp()" style="cursor: pointer;">Je n'ai pas encore de compte</a>
+		<a ng-click="goToSignUp()" style="cursor: pointer;">Je n'ai pas
+			encore de compte</a>
 	</div>
 </div>
