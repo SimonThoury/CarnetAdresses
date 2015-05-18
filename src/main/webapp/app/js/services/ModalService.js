@@ -1,5 +1,5 @@
 /**
- * 
+ * Service des fenêtres modales
  */
 
 angular.module("carnetAdresses").factory("ModalService",function($http, $location, $modal) {
