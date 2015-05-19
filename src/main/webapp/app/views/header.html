@@ -14,10 +14,11 @@
 					style="cursor: pointer;"><span
 						class="glyphicon glyphicon-log-in" aria-hidden="true"></span>
 						Connexion</a></li>
-				<li ng-show="isConnected()"><a style="cursor: pointer;"><span
-						class="glyphicon glyphicon-user" aria-hidden="true"></span>
-						 {{getConnectedUser()}}</a></li>		
-				<li ng-show="isConnected()"><a ng-click="signOut()" style="cursor: pointer;"><span
+				<li ng-show="isConnected()"><a ng-click="goToPage('/profile')"
+					style="cursor: pointer;"><span class="glyphicon glyphicon-user"
+						aria-hidden="true"></span> {{getConnectedUser()}}</a></li>
+				<li ng-show="isConnected()"><a ng-click="signOut()"
+					style="cursor: pointer;"><span
 						class="glyphicon glyphicon-log-out" aria-hidden="true"></span>
 						Déconnexion</a></li>
 			</ul>

@@ -9,6 +9,10 @@ angular.module("carnetAdresses", ["ngRoute", "ui.bootstrap"]).config(function($r
 	.when("/", {
 		templateUrl:"app/views/home.html"
 	})
+	.when("/profile", {
+		templateUrl:"app/views/profile.html",
+		controller:"ProfileController"
+	})
 	.when("/signin", {
 		templateUrl:"app/views/signin.html",
 		controller:"SignInController"
