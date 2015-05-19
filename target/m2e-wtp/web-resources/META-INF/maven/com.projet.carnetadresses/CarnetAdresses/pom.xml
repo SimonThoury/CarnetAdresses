@@ -129,6 +129,7 @@
 			<version>${spring-security.version}</version>
 		</dependency>
 
+		<!--  -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
 			<artifactId>javax.servlet-api</artifactId>
@@ -136,12 +137,13 @@
 			<scope>provided</scope>
 		</dependency>
 
+		<!-- Permet la communication avec des bases mysql -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 			<version>5.1.34</version>
 			<scope>runtime</scope>
-		</dependency>
+		</dependency>		
 
 	</dependencies>	
 	

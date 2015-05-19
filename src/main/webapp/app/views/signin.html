@@ -12,6 +12,9 @@
 				placeholder="Entrer votre mot de passe" ng-model="profil.password"
 				required>
 		</div>
+		<div class="input-group" ng-show="inError">
+			<br /><span>Mauvais Login/Mot de passe</span>
+		</div>
 		<br />
 		<div class="input-group">
 			<button type="submit" class="btn btn-primary" disabled="disabled"
