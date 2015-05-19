@@ -1,8 +1,13 @@
 package com.projet.domain;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.NamedQueries;
 import javax.persistence.NamedQuery;
 
@@ -32,6 +37,13 @@ public class User {
 	
 	private String role;
 	private boolean active;
+	
+	@ManyToMany
+	@JoinTable(name="users_addresses",
+		joinColumns={@JoinColumn(name="user_id", referencedColumnName="id")},
+		inverseJoinColumns={@JoinColumn(name="address_id", referencedColumnName="id")}
+	)
+	private List<Address> addresses;
 	
 	public int getId() {
 		return id;
@@ -103,6 +115,14 @@ public class User {
 	
 	public void setActive(boolean active) {
 		this.active = active;
+	}
+
+	public List<Address> getAddresses() {
+		return addresses;
+	}
+
+	public void setAddresses(List<Address> addresses) {
+		this.addresses = addresses;
 	}
 	
 }

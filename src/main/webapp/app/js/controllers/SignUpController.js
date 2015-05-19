@@ -7,8 +7,8 @@ angular.module("carnetAdresses").controller("SignUpController", function($scope,
 	$scope.profil = {};
 
 	// Fonction de sauvegarde du formulaire
-	$scope.saveProfil = function () {
-		SignUpService.saveProfil($scope.profil) 
+	$scope.signUp = function () {
+		SignUpService.signUp($scope.profil) 
 		.then(
 			function(result) {			
 				$scope.saveOk();					
@@ -52,7 +52,7 @@ angular.module("carnetAdresses").controller("SignUpController", function($scope,
 	$scope.saveExists = function () {
 		ModalService.openModal(
 			"Échec de l'inscription",
-			"L'adresse mail ou le login que vous avez choisi est déjà utilisé pour un compte !",
+			"L'adresse mail ou le login que vous avez choisi est déjà utilisé(e) pour un compte !",
 			"OK"
 		);
 	};		

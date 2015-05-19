@@ -28,6 +28,10 @@ angular.module("carnetAdresses").controller("HeaderController", function($scope,
 		return SignInService.isConnected();
 	};	
 	
+	$scope.getConnectedUser = function() {
+		return SignInService.getConnectedUser();
+	};	
+	
 	$scope.goToPage = function(path) {
 		$location.path(path);
 	};
