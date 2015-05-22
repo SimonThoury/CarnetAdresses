@@ -42,6 +42,16 @@ public class UserServiceImpl implements UserService {
 		User user = find(login);
 		user.setActive(false);
 	}
+	
+	@Override
+	@Transactional
+	public void modify(String login, User newProfile) {
+		User user = find(login);
+		user.setFirstName(newProfile.getFirstName());
+		user.setLastName(newProfile.getLastName());
+		user.setEmail(newProfile.getEmail());
+		user.setTelephone(newProfile.getTelephone());
+	}	
 
 	@SuppressWarnings("unchecked")
 	@Override

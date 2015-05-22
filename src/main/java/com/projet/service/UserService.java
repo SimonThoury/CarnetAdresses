@@ -9,5 +9,6 @@ public interface UserService {
 	public boolean emailExists(String uemail);
 	public boolean loginExists(String ulogin);
 	public User find(String login);
+	public void modify(String login, User newProfile);
 	
 }

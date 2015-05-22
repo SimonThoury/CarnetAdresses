@@ -1,25 +1,46 @@
 <div class="col-sm-4"></div>
 <div class="container col-sm-4">
-	<form class="form-horizontal">
-		<h3>Profil de {{user.entity.login}}</h3>
+	<form class="form-horizontal" name="modifyProfileForm"
+		ng-submit="modifyProfile()" novalidate>
+		<h3>Profil de {{user.login}}</h3>
 		<table class="table table-bordered">
 			<tr>
 				<th class="col-sm-6">Prénom</th>
-				<td class="col-sm-6">{{user.entity.firstName}}</td>
+				<td class="col-sm-6">
+					<span ng-show="isModified">{{user.firstName}}</span>
+					<input ng-hide="isModified" type="text" class="form-control" ng-model="user.firstName" required>				
+				</td>
 			</tr>
 			<tr>
 				<th class="col-sm-6">Nom</th>
-				<td class="col-sm-6">{{user.entity.lastName}}</td>
+				<td class="col-sm-6">
+					<span ng-show="isModified">{{user.lastName}}</span>
+					<input ng-hide="isModified" type="text" class="form-control" ng-model="user.lastName" required>	
+				</td>				
 			</tr>
 			<tr>
 				<th class="col-sm-6">Email</th>
-				<td class="col-sm-6">{{user.entity.email}}</td>
+				<td class="col-sm-6">
+					<span ng-show="isModified">{{user.email}}</span>
+					<input ng-hide="isModified" type="email" class="form-control" ng-model="user.email" required>
+				</td>				
 			</tr>
 			<tr>
 				<th class="col-sm-6">Numéro de téléphone</th>
-				<td class="col-sm-6">{{user.entity.telephone}}</td>
-			</tr>									
+				<td class="col-sm-6">
+					<span ng-show="isModified">{{user.telephone}}</span>
+					<input ng-hide="isModified" type="text" class="form-control" ng-model="user.telephone" required>
+				</td>
+			</tr>
 		</table>
+		<div class="form-group">
+			<div class="col-sm-6">
+				<button type="button" class="btn btn-primary" ng-show="isModified"
+					ng-click="setModifyProfile()">Modifier</button>
+				<button type="submit" class="btn btn-primary" ng-hide="isModified"
+					ng-click="setProfileModified()" ng-disabled="modifyProfileForm.$invalid">Sauvegarder</button>
+			</div>
+		</div>
 	</form>
 </div>
 <div class="col-sm-4"></div>

@@ -33,4 +33,9 @@ public class UserController {
 		return new UserJson(result);
 	}
 	
+	@RequestMapping(value="/modifyUser/{login}", method=RequestMethod.PUT)
+	@ResponseStatus(value = HttpStatus.OK)
+	public void modifyUser(@PathVariable("login") String login, @RequestBody User newProfile) {
+		userService.modify(login,newProfile);
+	}	
 }
